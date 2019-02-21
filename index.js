@@ -16,7 +16,7 @@ if (message.content.includes("https://lichess.org/") && message.content.split("/
 			let embed = new discord.RichEmbed()
 			message.channel.send({
 				embed: embed,
-				files: data.toString(),
+				files: [data],
 				name: "file.gif"
 			})
 		})
