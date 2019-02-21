@@ -8,19 +8,20 @@ app.on('ready', () => {
 	console.log(`Logged in as ${app.user.tag}!`);
 });
 app.on('message', message => {
-if (message.content.includes("https://lichess.org/") && message.content.split("/")[3].length === 8) {
-	console.log("test");
-	gif(message.content.split("/")[3])
-		.then(data => {
-			console.log(data)
-			let embed = new discord.RichEmbed()
-			message.channel.send({
-				embed: embed,
-				files: [data],
-				name: "file.gif"
+	if (message.content.includes("https://lichess.org/") && message.content.split("/")[3].length === 8) {
+		console.log("test");
+		gif(message.content.split("/")[3])
+			.then(data => {
+				console.log(data)
+				//let embed = new discord.RichEmbed({files:[{attachment:[data],name:"file.gif"}]})
+				message.channel.send({
+					files: [{
+						attachment: data,
+						name: 'file.gif'
+					}]
+				})
 			})
-		})
-		.catch(err=>console.log(err))
-}
+			.catch(err => console.log(err))
+	}
 })
 app.login(process.env.BOT_TOKEN)
