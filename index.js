@@ -12,8 +12,6 @@ app.on('message', message => {
 		console.log("test");
 		gif(message.content.split("/")[3])
 			.then(data => {
-				console.log(data)
-				//let embed = new discord.RichEmbed({files:[{attachment:[data],name:"file.gif"}]})
 				message.channel.send({
 					files: [{
 						attachment: data,
