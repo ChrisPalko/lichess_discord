@@ -62,10 +62,6 @@ function getPosition(move, moves) {
 			}
 		}
 	}
-	// const out = fs.createWriteStream(__dirname + `/test${i}.png`)
-	// const stream = canvas.pngStream()
-	// stream.pipe(out)
-	// out.on('finish', () => console.log('The PNG file was created.'))
 	return ctx
 }
 
@@ -82,10 +78,8 @@ async function gif(game) {
 		encoder.addFrame(fenToImage(moves, i,i))
 	}
 	encoder.finish()
-	//console.log(JSON.stringify(encoder.out.getData()))
 	return(encoder.out.getData())
 }
 
-//gif("inbuPkXp")
 
 module.exports = gif
