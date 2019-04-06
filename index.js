@@ -22,5 +22,5 @@ app.on("message", message => {
 })
 
 app.login(
-	"mfa.0Nj27d-ZoxhufUjqDjTXjzTG8JWIOfwD1EIp1N2qnrlhY_TGPTaY9RPZecdGX1pjyjNZciVYF7HeE6r4UCWv"
+	process.env.BOT_TOKEN
 )
